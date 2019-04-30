@@ -141,22 +141,18 @@ npm publish
 > import { Routes, RouterModule } from '@angular/router';
 > import { TelephoneComponent } from './components/telephone/telephone.component';
 > import { ErrorComponent } from './components/error/error.component';
-
 > const routes: Routes = [
 >  {path : '' , component : TelephoneComponent},
 >  {path : '**' , component : ErrorComponent},
 > ];
-
 > @NgModule({
 >  imports: [RouterModule.forChild(routes)],
 >  exports: [RouterModule]
 > })
 > export class TelephoneRoutingModule { }
-
 > ```
 
 > telephone.module.ts :
-
 > ```javascript
 > @NgModule({
 >  declarations: [
@@ -183,7 +179,6 @@ npm publish
 >  ]
 > })
 > export class TelephoneModule { }
-
 > ```
 
 > 接下來我們將從 npm 下載該模組進行運用
@@ -259,13 +254,10 @@ export class AppRoutingModule { }
 > ```
 > @Injectable()
 > export class HttpService {
-
 >  constructor(public http: HttpClient,
 >              public config: HttpConfig) { }
 >
-
 >  get<TResult>(params: HttpParameter): Observable<TResult> {
-
 >    return this.http.get<TResult>(params.hostUrl, params)
 >      .pipe(
 >        timeout(this.config.MAX_TIME_OUT),
@@ -273,42 +265,29 @@ export class AppRoutingModule { }
 >        retry(this.config.RETRY_COUNT)
 >      )
 >  }
-
 >  post<TResult>(params : HttpParameter) : Observable<TResult>{
-
 >    return this.http.post<TResult>(params.hostUrl , params.body , params)
 >            .pipe(
 >              timeout(this.config.MAX_TIME_OUT),
 >              catchError(this.errorHandler),
 >              retry(this.config.RETRY_COUNT)
 >    )
-
 >  }
 > 
-
 >  errorHandler(error: HttpErrorResponse) {
-
 >    /**
 >     * DO SOMETHING
 >     */
 >    console.log(error)
-
 >    return throwError(error);
 >  }
-
-
 > }
-
-
 > ```
-> 
-> 
+
 > http-parameter.model.ts
 
 > ```javascript
-
 > import { HttpParams, HttpHeaders } from '@angular/common/http'
-
 > export class IHttpOptions
 > { 
 >    headers?: HttpHeaders | {
@@ -322,13 +301,10 @@ export class AppRoutingModule { }
 >    responseType? : 'json'
 >    withCredentials?: boolean;
 > }
-
 > export class HttpParameter extends IHttpOptions {
 >
 >    hostUrl : string
 >    body? : any = {}
->
->
 > }
 > ```
 
@@ -593,10 +569,9 @@ export class AppComponent {
 
 ### 重用 component
 > [情境] 目前已經有既有的模組,名稱為<span style="color:red">ptc-commomn-module </span> , 共用 component 已經準備好 , 程式碼如下 :
-> 
-> 
-> local-table.component.html
 
+
+> local-table.component.html
 > ```javascript
 > <ng2-smart-table [settings]="settings" [source]="data"></ng2-smart-table>
 > 
@@ -606,12 +581,10 @@ export class AppComponent {
 > 
 > ```javascript
 > import { Component, OnInit, Input } from '@angular/core';
-
 > @Component({
 >  ...
 > })
 > export class LocalTableComponent implements OnInit {
-
 >  @Input() data = [
 >    {
 >      id: 1,
@@ -619,10 +592,8 @@ export class AppComponent {
 >      username: "Bret",
 >      email: "Sincere@april.biz"
 >    }
->        // ... list of items
-      
+>        // ... list of items      
 >  ];
-
 >  @Input() settings  = {
 >    columns: {
 >      id: {
@@ -640,12 +611,11 @@ export class AppComponent {
 >    }
 >
 >  }
-
 >  constructor() { }
 > }
-
 > 
 > ```
+
 > ptc-common.module.ts
 
 > ```
@@ -665,6 +635,7 @@ export class AppComponent {
 > })
 > export class PtcCommonModule { }
 > ```
+
 > 與上個範例相同 , 將從 npm 下載該模組進行運用
 
 
