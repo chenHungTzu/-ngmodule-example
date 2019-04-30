@@ -130,7 +130,7 @@ npm publish
 *  [重用 component](#重用-component)
 
 
-###介入 ngRouting
+### 介入 ngRouting
 
 > [情境] 目前已經有既有的模組,名稱為<span style="color:red">pphone</span> , routing 與對應component 已經準備好 , 程式碼如下 :
 
@@ -140,49 +140,49 @@ npm publish
 > import { NgModule } from '@angular/core';
 > import { Routes, RouterModule } from '@angular/router';
 > import { TelephoneComponent } from './components/telephone/telephone.component';
->import { ErrorComponent } from './components/error/error.component';
+> import { ErrorComponent } from './components/error/error.component';
 
->const routes: Routes = [
+> const routes: Routes = [
 >  {path : '' , component : TelephoneComponent},
 >  {path : '**' , component : ErrorComponent},
->];
+> ];
 
->@NgModule({
+> @NgModule({
 >  imports: [RouterModule.forChild(routes)],
 >  exports: [RouterModule]
->})
->export class TelephoneRoutingModule { }
+> })
+> export class TelephoneRoutingModule { }
 
 > ```
 
 > telephone.module.ts :
 
 > ```javascript
-@NgModule({
-  declarations: [
-    ControlPanelComponent,
-    CommunicationRecordsComponent,
-    TelephoneComponent,
-    ErrorComponent
-  ],
-  providers: [
-    ...
-  ],
-  imports: [
-	...
-    CommonModule,
-    FormsModule,
-    TelephoneRoutingModule, 
-  ],
-  exports: [
-    TelephoneRoutingModule,  
-    ControlPanelComponent,
-    CommunicationRecordsComponent,
-    TelephoneComponent,
-    ErrorComponent
-  ]
-})
-export class TelephoneModule { }
+> @NgModule({
+>  declarations: [
+>    ControlPanelComponent,
+>    CommunicationRecordsComponent,
+>    TelephoneComponent,
+>    ErrorComponent
+>  ],
+>  providers: [
+>    ...
+>  ],
+>  imports: [
+>	...
+>    CommonModule,
+>    FormsModule,
+>    TelephoneRoutingModule, 
+>  ],
+>  exports: [
+>   TelephoneRoutingModule,  
+>    ControlPanelComponent,
+>    CommunicationRecordsComponent,
+>    TelephoneComponent,
+>    ErrorComponent
+>  ]
+> })
+> export class TelephoneModule { }
 
 > ```
 
@@ -251,7 +251,7 @@ export class AppRoutingModule { }
 ![demo](https://github.com/chenHungTzu/ng-module-example/blob/master/demo.gif?raw=true)
 
 
-###重用/複寫 service
+### 重用/複寫 service
 > [情境] 目前已經有既有的模組,名稱為<span style="color:red">pcommon </span> , 共用 component 已經準備好 , 程式碼如下 :
 > 
 > http.service.ts
@@ -297,7 +297,7 @@ export class AppRoutingModule { }
 >  }
 
 
->}
+> }
 
 
 > ```
@@ -307,10 +307,10 @@ export class AppRoutingModule { }
 
 > ```javascript
 
->import { HttpParams, HttpHeaders } from '@angular/common/http'
+> import { HttpParams, HttpHeaders } from '@angular/common/http'
 
->export class IHttpOptions
->{
+> export class IHttpOptions
+> { 
 >    headers?: HttpHeaders | {
 >        [header: string]: string | string[];
 >    };
@@ -321,15 +321,15 @@ export class AppRoutingModule { }
 >    reportProgress?: boolean;
 >    responseType? : 'json'
 >    withCredentials?: boolean;
->}
+> }
 
->export class HttpParameter extends IHttpOptions {
+> export class HttpParameter extends IHttpOptions {
 >
 >    hostUrl : string
 >    body? : any = {}
 >
 >
->}
+> }
 > ```
 
 1 建立一個空的angular專案
@@ -493,22 +493,22 @@ export class PhoneModule { }
  
  > 相關文獻請參閱 [angular DI](https://angular.io/guide/hierarchical-dependency-injection) 
 
-###介入 ngStore / Action
+### 介入 ngStore / Action
 
 > ngrxStore 建置內容這邊不多贅述 , 請參閱 ：[ngrx.io](https://ngrx.io/guide/store)
 > 
 > 
 > public_api.ts
 > 
->```javascript
+> ```javascript
 >
->export * from "./app/core/ngrx/actions/phone.actions";
->export * from "./app/core/ngrx/reducers/index";
->export * from "./app/core/ngrx/effects/index";
+> export * from "./app/core/ngrx/actions/phone.actions";
+> export * from "./app/core/ngrx/reducers/index";
+> export * from "./app/core/ngrx/effects/index";
 >
->...
+> ...
 >
->``` 
+> ``` 
 >
 > 與上個範例相同 , 將從 npm 下載該模組進行運用
 
@@ -591,7 +591,7 @@ export class AppComponent {
 ```
 
 
-###重用 component
+### 重用 component
 > [情境] 目前已經有既有的模組,名稱為<span style="color:red">ptc-commomn-module </span> , 共用 component 已經準備好 , 程式碼如下 :
 > 
 > 
@@ -642,7 +642,7 @@ export class AppComponent {
 >  }
 
 >  constructor() { }
->}
+> }
 
 > 
 > ```
