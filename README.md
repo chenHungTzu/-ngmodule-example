@@ -571,7 +571,7 @@ export class AppComponent {
 
 
 > local-table.component.html
-> ```javascript
+> ```html
 > <ng2-smart-table [settings]="settings" [source]="data"></ng2-smart-table>
 > 
 > ```
@@ -708,9 +708,8 @@ export class AppComponent {
 
 4 修改 `./src/app/app.component.html`
 
-```
+```html
 <app-local-table [settings] = "settings" [data]="data"></app-local-table>
-
 ```
 
 5 展示結果如下 ： 
