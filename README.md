@@ -716,5 +716,5 @@ export class AppComponent {
 
 5 展示結果如下 ： 
 
-![Alt text][id]
-[id]: https://raw.githubusercontent.com/chenHungTzu/ng-module-example/master/demo1.png  "demo1"
+<img width="100%"  alt="demo2" src="https://raw.githubusercontent.com/chenHungTzu/ng-module-example/master/demo1.png">
+
