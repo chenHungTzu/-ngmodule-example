@@ -250,7 +250,7 @@ export class AppRoutingModule { }
 > 
 > http.service.ts
 > 
-> ```
+> ```javascript
 > @Injectable()
 > export class HttpService {
 >  constructor(public http: HttpClient,
