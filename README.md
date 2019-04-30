@@ -517,7 +517,7 @@ export class AppModule { }
 
 2 修改 `./src/app/app.component.ts`
 
-```
+```javascript
 
 ...
 
@@ -617,7 +617,7 @@ export class AppComponent {
 
 > ptc-common.module.ts
 
-> ```
+> ```javascript
 >  @NgModule({
 >   declarations: [LocalTableComponent],
 >   imports: [
