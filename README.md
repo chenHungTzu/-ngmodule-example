@@ -5,10 +5,10 @@
 > * 使用 ng-packagr 建立模組
 > * 使用 @angular-devkit/build-ng-packagr 建立模組
 > * 如何使用
-  * Routing
-  * Component 
-  * NgStore
-  * Service
+>   * Routing
+>   * Component 
+>   * NgStore
+>   * Service
 
 
 
