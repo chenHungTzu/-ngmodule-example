@@ -24,7 +24,6 @@ ng new 專案名稱
 
 ```
 npm install ng-packagr
-
 ```
 
 3 建立 `public_api.ts`  於專案目錄 `./src/` 中
